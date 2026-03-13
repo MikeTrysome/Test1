@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Google" />
+  <title>Google App</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icon.png" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f2f2f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    button {
+      background: #007aff;
+      color: white;
+      border: none;
+      border-radius: 14px;
+      padding: 18px 48px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 122, 255, 0.4);
+      transition: transform 0.1s, box-shadow 0.1s;
+    }
+
+    button:active {
+      transform: scale(0.97);
+      box-shadow: 0 2px 8px rgba(0, 122, 255, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <button onclick="window.location.href='https://www.google.com'">
+    Ga naar Google
+  </button>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
+</body>
+</html>
